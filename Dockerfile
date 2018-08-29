@@ -1,12 +1,6 @@
 FROM openjdk:8-jre-alpine3.8
 
-RUN apk add --no-cache \
-            wget \
-            bash \
-            git \
-            openssh-client \
-            openssl \
-            procps
+RUN apk add --no-cache wget bash git openssh-client openssl procps
 
 ARG user=jenkins
 ARG group=jenkins
