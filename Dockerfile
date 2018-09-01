@@ -19,8 +19,11 @@ ARG AGENT_WORKDIR=/home/${user}/agent
 
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN mkdir -p /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR} && chown -R jenkins:jenkins /home/${user}
-USER ${user}
 
 VOLUME /home/${user}/.jenkins
 VOLUME ${AGENT_WORKDIR}
+
+RUN chown -R jenkins:jenkins /home/${user}
+USER ${user}
+
 WORKDIR /home/${user}
