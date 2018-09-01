@@ -17,16 +17,9 @@ RUN adduser -h $HOME -u ${uid} -G ${group} -D ${user}
 
 ARG AGENT_WORKDIR=/home/${user}/agent
 
-RUN mkdir -p /usr/share/jenkins  \
-  && chmod 755 /usr/share/jenkins \
-  && chown jenkins:jenkins /usr/share/jenkins \
-  && mkdir -p ${AGENT_WORKDIR} \
-  && chown jenkins:jenkins ${AGENT_WORKDIR} \
-  && chmod 777 ${AGENT_WORKDIR}
-
 USER ${user}
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
-RUN mkdir -p /home/${user}/.jenkins
+RUN mkdir -p /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR
 
 VOLUME /home/${user}/.jenkins
 VOLUME ${AGENT_WORKDIR}
