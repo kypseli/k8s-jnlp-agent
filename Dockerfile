@@ -19,9 +19,6 @@ ARG AGENT_WORKDIR=/home/${user}/agent
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 
 USER ${user}
-VOLUME /home/${user}/.jenkins
-VOLUME ${AGENT_WORKDIR}
-
 RUN mkdir -p /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR}
 
 WORKDIR /home/${user}
