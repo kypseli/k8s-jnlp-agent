@@ -18,7 +18,7 @@ RUN adduser -h $HOME -u ${uid} -G ${group} -D ${user}
 ARG AGENT_WORKDIR=/home/${user}/agent
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 
-USER ${user}
+USER ${uid}
 RUN mkdir -p /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR}
 
 WORKDIR /home/${user}
