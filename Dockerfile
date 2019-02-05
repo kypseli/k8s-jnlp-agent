@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine3.8
+FROM maven:3.3.9-jdk-8-alpine
 
 RUN apk add --no-cache \
              wget \
