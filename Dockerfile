@@ -4,7 +4,8 @@ RUN apk add --no-cache \
              wget \
              bash \
              git \
-             procps
+             procps \
+             curl
 
 ARG user=jenkins
 ARG group=jenkins
