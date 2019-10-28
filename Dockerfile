@@ -14,7 +14,7 @@ ARG uid=10000
 ARG gid=10000
 
 ENV YQ_BIN_VERSION=2.4.0
-RUN wget -O /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/${YAML_BIN_VERSION}/yq_linux_amd64"
+RUN wget -O /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/${YQ_BIN_VERSION}/yq_linux_amd64"
 
 ENV HOME /home/${user}
 RUN addgroup -g ${gid} ${group}
